@@ -75,6 +75,14 @@ namespace CMDB
                         }
                     },
                     {
+                        typeof(SubFormサーバー管理者MST),
+                        new ControlMapper
+                        {
+                            FormType = typeof(SubFormサーバー管理者MST),
+                            DisplayName = "サーバー管理者MST",
+                        }
+                    },
+                    {
                         typeof(SubFormサーバー_ソフトウェア別_バージョンREL),
                         new ControlMapper
                         {
