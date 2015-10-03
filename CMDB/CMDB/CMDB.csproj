@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C3EEFBF5-0EF2-49DA-81D5-0B5BADC3477C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CMDB</RootNamespace>
+    <AssemblyName>CMDB</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>cbd1b11a</NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SubForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SubFormJOBMST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SubFormJOBMST.Designer.cs">
+      <DependentUpon>SubFormJOBMST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SubFormJOB_サーバー_ソフトウェア_バージョンREL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SubFormJOB_サーバー_ソフトウェア_バージョンREL.Designer.cs">
+      <DependentUpon>SubFormJOB_サーバー_ソフトウェア_バージョンREL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SubFormJOB_担当者REL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SubFormJOB_担当者REL.Designer.cs">
+      <DependentUpon>SubFormJOB_担当者REL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SubFormサーバーMST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SubFormサーバーMST.Designer.cs">
+      <DependentUpon>SubFormサーバーMST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SubFormサーバー_ソフトウェア別_バージョンREL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SubFormサーバー_ソフトウェア別_バージョンREL.Designer.cs">
+      <DependentUpon>SubFormサーバー_ソフトウェア別_バージョンREL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SubFormソフトウェアMST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SubFormソフトウェアMST.Designer.cs">
+      <DependentUpon>SubFormソフトウェアMST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SubFormソフトウェア_バージョンREL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SubFormソフトウェア_バージョンREL.Designer.cs">
+      <DependentUpon>SubFormソフトウェア_バージョンREL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SubForm担当者MST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SubForm担当者MST.Designer.cs">
+      <DependentUpon>SubForm担当者MST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SubForm顧客MST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SubForm顧客MST.Designer.cs">
+      <DependentUpon>SubForm顧客MST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CMDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CMDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CMDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CMDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CMDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CMDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\JOBMST.cs">
+      <DependentUpon>CMDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\JOB_サーバーソフトウェアバージョンREL.cs">
+      <DependentUpon>CMDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\JOB_担当者REL.cs">
+      <DependentUpon>CMDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SearchModelFromJob.cs" />
+    <Compile Include="Models\サーバーMST.cs">
+      <DependentUpon>CMDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\サーバー_ソフトウェアバージョンREL.cs">
+      <DependentUpon>CMDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\サーバー管理者MST.cs">
+      <DependentUpon>CMDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ソフトウェアMST.cs">
+      <DependentUpon>CMDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ソフトウェアバージョンMST.cs">
+      <DependentUpon>CMDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\担当者MST.cs">
+      <DependentUpon>CMDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\顧客MST.cs">
+      <DependentUpon>CMDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SubFormJOBMST.resx">
+      <DependentUpon>SubFormJOBMST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SubFormJOB_サーバー_ソフトウェア_バージョンREL.resx">
+      <DependentUpon>SubFormJOB_サーバー_ソフトウェア_バージョンREL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SubFormJOB_担当者REL.resx">
+      <DependentUpon>SubFormJOB_担当者REL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SubFormサーバーMST.resx">
+      <DependentUpon>SubFormサーバーMST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SubFormサーバー_ソフトウェア別_バージョンREL.resx">
+      <DependentUpon>SubFormサーバー_ソフトウェア別_バージョンREL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SubFormソフトウェアMST.resx">
+      <DependentUpon>SubFormソフトウェアMST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SubFormソフトウェア_バージョンREL.resx">
+      <DependentUpon>SubFormソフトウェア_バージョンREL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SubForm担当者MST.resx">
+      <DependentUpon>SubForm担当者MST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SubForm顧客MST.resx">
+      <DependentUpon>SubForm顧客MST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="app.config" />
+    <EntityDeploy Include="Models\CMDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CMDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Models\CMDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CMDB.edmx</DependentUpon>
+      <LastGenOutput>CMDB.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Models\CMDB.edmx.diagram">
+      <DependentUpon>CMDB.edmx</DependentUpon>
+    </None>
+    <None Include="Models\CMDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CMDB.edmx</DependentUpon>
+      <LastGenOutput>CMDB.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\CMDB.Models.JOBMST.datasource" />
+    <None Include="Properties\DataSources\CMDB.Models.JOBMSTList.datasource" />
+    <None Include="Properties\DataSources\CMDB.Models.JOB_サーバー_ソフトウェア_バージョンREL.datasource" />
+    <None Include="Properties\DataSources\CMDB.Models.JOB_サーバー_ソフトウェア_バージョンRELList.datasource" />
+    <None Include="Properties\DataSources\CMDB.Models.JOB_サーバーソフトウェアバージョンREL.datasource" />
+    <None Include="Properties\DataSources\CMDB.Models.JOB_担当者REL.datasource" />
+    <None Include="Properties\DataSources\CMDB.Models.JOB_担当者RELList.datasource" />
+    <None Include="Properties\DataSources\CMDB.Models.SearchModelFromJob.datasource" />
+    <None Include="Properties\DataSources\CMDB.Models.WebシステムTRN.datasource" />
+    <None Include="Properties\DataSources\CMDB.Models.WebシステムTRNList.datasource" />
+    <None Include="Properties\DataSources\CMDB.Models.サーバーMST.datasource" />
+    <None Include="Properties\DataSources\CMDB.Models.サーバーMSTList.datasource" />
+    <None Include="Properties\DataSources\CMDB.Models.サーバー_ソフトウェアバージョンREL.datasource" />
+    <None Include="Properties\DataSources\CMDB.Models.サーバー_ソフトウェア別_バージョンREL.datasource" />
+    <None Include="Properties\DataSources\CMDB.Models.サーバー_ソフトウェア別_バージョンRELList.datasource" />
+    <None Include="Properties\DataSources\CMDB.Models.ソフトウェアMST.datasource" />
+    <None Include="Properties\DataSources\CMDB.Models.ソフトウェアMSTList.datasource" />
+    <None Include="Properties\DataSources\CMDB.Models.ソフトウェア_バージョンREL.datasource" />
+    <None Include="Properties\DataSources\CMDB.Models.ソフトウェア_バージョンRELList.datasource" />
+    <None Include="Properties\DataSources\CMDB.Models.ソフトウェアバージョンMST.datasource" />
+    <None Include="Properties\DataSources\CMDB.Models.バージョンMST.datasource" />
+    <None Include="Properties\DataSources\CMDB.Models.バージョンMSTList.datasource" />
+    <None Include="Properties\DataSources\CMDB.Models.保守期限TRN.datasource" />
+    <None Include="Properties\DataSources\CMDB.Models.保守期限TRNList.datasource" />
+    <None Include="Properties\DataSources\CMDB.Models.担当者MST.datasource" />
+    <None Include="Properties\DataSources\CMDB.Models.担当者MSTList.datasource" />
+    <None Include="Properties\DataSources\CMDB.Models.顧客MST.datasource" />
+    <None Include="Properties\DataSources\CMDB.Models.顧客MSTList.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

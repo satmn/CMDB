@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f85a535bda8d40c18726ea001376a279" Name="Diagram1" ZoomLevel="63">
+        <EntityTypeShape EntityType="CMDBModel.JOB_サーバーソフトウェアバージョンREL" Width="1.5" PointX="7.5" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CMDBModel.JOB_担当者REL" Width="1.5" PointX="7.5" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CMDBModel.JOBMST" Width="1.5" PointX="5.25" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="CMDBModel.サーバー_ソフトウェアバージョンREL" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="CMDBModel.サーバーMST" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CMDBModel.サーバー管理者MST" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CMDBModel.ソフトウェアMST" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CMDBModel.ソフトウェアバージョンMST" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CMDBModel.顧客MST" Width="1.5" PointX="3" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CMDBModel.担当者MST" Width="1.5" PointX="5.25" PointY="5.25" IsExpanded="true" />
+        <AssociationConnector Association="CMDBModel.FK_JOB_サーバーソフトウェアバージョンREL_JOBMST" ManuallyRouted="false" />
+        <AssociationConnector Association="CMDBModel.FK_JOB_サーバーソフトウェアバージョンREL_サーバー_ソフトウェアバージョンREL" ManuallyRouted="false" />
+        <AssociationConnector Association="CMDBModel.FK_JOB_担当者REL_JOBMST" ManuallyRouted="false" />
+        <AssociationConnector Association="CMDBModel.FK_JOB_担当者REL_担当者MST" ManuallyRouted="false" />
+        <AssociationConnector Association="CMDBModel.FK_JOBMST_顧客MST" ManuallyRouted="false" />
+        <AssociationConnector Association="CMDBModel.FK_サーバー_ソフトウェアバージョンREL_サーバーMST" ManuallyRouted="false" />
+        <AssociationConnector Association="CMDBModel.FK_サーバー_ソフトウェアバージョンREL_ソフトウェアバージョンMST" ManuallyRouted="false" />
+        <AssociationConnector Association="CMDBModel.FK_サーバーMST_サーバー管理者MST" ManuallyRouted="false" />
+        <AssociationConnector Association="CMDBModel.FK_ソフトウェアバージョンMST_ソフトウェアMST" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

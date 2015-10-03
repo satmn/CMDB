@@ -1,0 +1,668 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CMDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="JOB_サーバーソフトウェアバージョンREL">
+          <Key>
+            <PropertyRef Name="JOB_サーバーソフトウェアバージョンID" />
+          </Key>
+          <Property Name="JOB_サーバーソフトウェアバージョンID" Type="int" Nullable="false" />
+          <Property Name="JOBID" Type="int" />
+          <Property Name="サーバーソフトウェアバージョンID" Type="int" />
+          <Property Name="登録日時" Type="date" Nullable="false" />
+          <Property Name="登録者" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="JOB_担当者REL">
+          <Key>
+            <PropertyRef Name="JOBID" />
+            <PropertyRef Name="担当者ID" />
+          </Key>
+          <Property Name="JOBID" Type="int" Nullable="false" />
+          <Property Name="担当者ID" Type="int" Nullable="false" />
+          <Property Name="登録日時" Type="date" Nullable="false" />
+          <Property Name="登録者" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="JOBMST">
+          <Key>
+            <PropertyRef Name="JOBID" />
+          </Key>
+          <Property Name="JOBID" Type="int" Nullable="false" />
+          <Property Name="JOB名" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="顧客ID" Type="int" Nullable="false" />
+          <Property Name="登録日時" Type="date" Nullable="false" />
+          <Property Name="登録者" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="サーバー_ソフトウェアバージョンREL">
+          <Key>
+            <PropertyRef Name="サーバーソフトウェアバージョンID" />
+          </Key>
+          <Property Name="サーバーソフトウェアバージョンID" Type="int" Nullable="false" />
+          <Property Name="サーバーID" Type="int" Nullable="false" />
+          <Property Name="ソフトウェアバージョンID" Type="int" Nullable="false" />
+          <Property Name="登録日時" Type="date" Nullable="false" />
+          <Property Name="登録者" Type="nchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="サーバーMST">
+          <Key>
+            <PropertyRef Name="サーバーID" />
+          </Key>
+          <Property Name="サーバーID" Type="int" Nullable="false" />
+          <Property Name="サーバー名" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="サーバー管理者ID" Type="int" Nullable="false" />
+          <Property Name="登録日時" Type="date" Nullable="false" />
+          <Property Name="登録者" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="サーバー管理者MST">
+          <Key>
+            <PropertyRef Name="サーバー管理者ID" />
+          </Key>
+          <Property Name="サーバー管理者ID" Type="int" Nullable="false" />
+          <Property Name="サーバー管理者名" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="登録日時" Type="date" Nullable="false" />
+          <Property Name="登録者" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ソフトウェアMST">
+          <Key>
+            <PropertyRef Name="ソフトウェアID" />
+          </Key>
+          <Property Name="ソフトウェアID" Type="int" Nullable="false" />
+          <Property Name="ソフトウェア名" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="登録日時" Type="date" Nullable="false" />
+          <Property Name="登録者" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ソフトウェアバージョンMST">
+          <Key>
+            <PropertyRef Name="ソフトウェアバージョンID" />
+          </Key>
+          <Property Name="ソフトウェアバージョンID" Type="int" Nullable="false" />
+          <Property Name="ソフトウェアID" Type="int" Nullable="false" />
+          <Property Name="バージョン" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="登録日時" Type="date" Nullable="false" />
+          <Property Name="登録者" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="顧客MST">
+          <Key>
+            <PropertyRef Name="顧客ID" />
+          </Key>
+          <Property Name="顧客ID" Type="int" Nullable="false" />
+          <Property Name="顧客名" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="登録日時" Type="date" Nullable="false" />
+          <Property Name="登録者" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="担当者MST">
+          <Key>
+            <PropertyRef Name="担当者ID" />
+          </Key>
+          <Property Name="担当者ID" Type="int" Nullable="false" />
+          <Property Name="担当者名" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="登録日時" Type="date" Nullable="false" />
+          <Property Name="登録者" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_JOB_サーバーソフトウェアバージョンREL_JOBMST">
+          <End Role="JOBMST" Type="Self.JOBMST" Multiplicity="0..1" />
+          <End Role="JOB_サーバーソフトウェアバージョンREL" Type="Self.JOB_サーバーソフトウェアバージョンREL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JOBMST">
+              <PropertyRef Name="JOBID" />
+            </Principal>
+            <Dependent Role="JOB_サーバーソフトウェアバージョンREL">
+              <PropertyRef Name="JOBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_JOB_サーバーソフトウェアバージョンREL_サーバー_ソフトウェアバージョンREL">
+          <End Role="サーバー_ソフトウェアバージョンREL" Type="Self.サーバー_ソフトウェアバージョンREL" Multiplicity="0..1" />
+          <End Role="JOB_サーバーソフトウェアバージョンREL" Type="Self.JOB_サーバーソフトウェアバージョンREL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="サーバー_ソフトウェアバージョンREL">
+              <PropertyRef Name="サーバーソフトウェアバージョンID" />
+            </Principal>
+            <Dependent Role="JOB_サーバーソフトウェアバージョンREL">
+              <PropertyRef Name="サーバーソフトウェアバージョンID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_JOB_担当者REL_JOBMST">
+          <End Role="JOBMST" Type="Self.JOBMST" Multiplicity="1" />
+          <End Role="JOB_担当者REL" Type="Self.JOB_担当者REL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JOBMST">
+              <PropertyRef Name="JOBID" />
+            </Principal>
+            <Dependent Role="JOB_担当者REL">
+              <PropertyRef Name="JOBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_JOB_担当者REL_担当者MST">
+          <End Role="担当者MST" Type="Self.担当者MST" Multiplicity="1" />
+          <End Role="JOB_担当者REL" Type="Self.JOB_担当者REL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="担当者MST">
+              <PropertyRef Name="担当者ID" />
+            </Principal>
+            <Dependent Role="JOB_担当者REL">
+              <PropertyRef Name="担当者ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_JOBMST_顧客MST">
+          <End Role="顧客MST" Type="Self.顧客MST" Multiplicity="1" />
+          <End Role="JOBMST" Type="Self.JOBMST" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="顧客MST">
+              <PropertyRef Name="顧客ID" />
+            </Principal>
+            <Dependent Role="JOBMST">
+              <PropertyRef Name="顧客ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_サーバー_ソフトウェアバージョンREL_サーバーMST">
+          <End Role="サーバーMST" Type="Self.サーバーMST" Multiplicity="1" />
+          <End Role="サーバー_ソフトウェアバージョンREL" Type="Self.サーバー_ソフトウェアバージョンREL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="サーバーMST">
+              <PropertyRef Name="サーバーID" />
+            </Principal>
+            <Dependent Role="サーバー_ソフトウェアバージョンREL">
+              <PropertyRef Name="サーバーID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_サーバー_ソフトウェアバージョンREL_ソフトウェアバージョンMST">
+          <End Role="ソフトウェアバージョンMST" Type="Self.ソフトウェアバージョンMST" Multiplicity="1" />
+          <End Role="サーバー_ソフトウェアバージョンREL" Type="Self.サーバー_ソフトウェアバージョンREL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ソフトウェアバージョンMST">
+              <PropertyRef Name="ソフトウェアバージョンID" />
+            </Principal>
+            <Dependent Role="サーバー_ソフトウェアバージョンREL">
+              <PropertyRef Name="ソフトウェアバージョンID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_サーバーMST_サーバー管理者MST">
+          <End Role="サーバー管理者MST" Type="Self.サーバー管理者MST" Multiplicity="1" />
+          <End Role="サーバーMST" Type="Self.サーバーMST" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="サーバー管理者MST">
+              <PropertyRef Name="サーバー管理者ID" />
+            </Principal>
+            <Dependent Role="サーバーMST">
+              <PropertyRef Name="サーバー管理者ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ソフトウェアバージョンMST_ソフトウェアMST">
+          <End Role="ソフトウェアMST" Type="Self.ソフトウェアMST" Multiplicity="1" />
+          <End Role="ソフトウェアバージョンMST" Type="Self.ソフトウェアバージョンMST" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ソフトウェアMST">
+              <PropertyRef Name="ソフトウェアID" />
+            </Principal>
+            <Dependent Role="ソフトウェアバージョンMST">
+              <PropertyRef Name="ソフトウェアID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CMDBModelStoreContainer">
+          <EntitySet Name="JOB_サーバーソフトウェアバージョンREL" EntityType="Self.JOB_サーバーソフトウェアバージョンREL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="JOB_担当者REL" EntityType="Self.JOB_担当者REL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="JOBMST" EntityType="Self.JOBMST" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="サーバー_ソフトウェアバージョンREL" EntityType="Self.サーバー_ソフトウェアバージョンREL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="サーバーMST" EntityType="Self.サーバーMST" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="サーバー管理者MST" EntityType="Self.サーバー管理者MST" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ソフトウェアMST" EntityType="Self.ソフトウェアMST" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ソフトウェアバージョンMST" EntityType="Self.ソフトウェアバージョンMST" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="顧客MST" EntityType="Self.顧客MST" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="担当者MST" EntityType="Self.担当者MST" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_JOB_サーバーソフトウェアバージョンREL_JOBMST" Association="Self.FK_JOB_サーバーソフトウェアバージョンREL_JOBMST">
+            <End Role="JOBMST" EntitySet="JOBMST" />
+            <End Role="JOB_サーバーソフトウェアバージョンREL" EntitySet="JOB_サーバーソフトウェアバージョンREL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JOB_サーバーソフトウェアバージョンREL_サーバー_ソフトウェアバージョンREL" Association="Self.FK_JOB_サーバーソフトウェアバージョンREL_サーバー_ソフトウェアバージョンREL">
+            <End Role="サーバー_ソフトウェアバージョンREL" EntitySet="サーバー_ソフトウェアバージョンREL" />
+            <End Role="JOB_サーバーソフトウェアバージョンREL" EntitySet="JOB_サーバーソフトウェアバージョンREL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JOB_担当者REL_JOBMST" Association="Self.FK_JOB_担当者REL_JOBMST">
+            <End Role="JOBMST" EntitySet="JOBMST" />
+            <End Role="JOB_担当者REL" EntitySet="JOB_担当者REL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JOB_担当者REL_担当者MST" Association="Self.FK_JOB_担当者REL_担当者MST">
+            <End Role="担当者MST" EntitySet="担当者MST" />
+            <End Role="JOB_担当者REL" EntitySet="JOB_担当者REL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JOBMST_顧客MST" Association="Self.FK_JOBMST_顧客MST">
+            <End Role="顧客MST" EntitySet="顧客MST" />
+            <End Role="JOBMST" EntitySet="JOBMST" />
+          </AssociationSet>
+          <AssociationSet Name="FK_サーバー_ソフトウェアバージョンREL_サーバーMST" Association="Self.FK_サーバー_ソフトウェアバージョンREL_サーバーMST">
+            <End Role="サーバーMST" EntitySet="サーバーMST" />
+            <End Role="サーバー_ソフトウェアバージョンREL" EntitySet="サーバー_ソフトウェアバージョンREL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_サーバー_ソフトウェアバージョンREL_ソフトウェアバージョンMST" Association="Self.FK_サーバー_ソフトウェアバージョンREL_ソフトウェアバージョンMST">
+            <End Role="ソフトウェアバージョンMST" EntitySet="ソフトウェアバージョンMST" />
+            <End Role="サーバー_ソフトウェアバージョンREL" EntitySet="サーバー_ソフトウェアバージョンREL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_サーバーMST_サーバー管理者MST" Association="Self.FK_サーバーMST_サーバー管理者MST">
+            <End Role="サーバー管理者MST" EntitySet="サーバー管理者MST" />
+            <End Role="サーバーMST" EntitySet="サーバーMST" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ソフトウェアバージョンMST_ソフトウェアMST" Association="Self.FK_ソフトウェアバージョンMST_ソフトウェアMST">
+            <End Role="ソフトウェアMST" EntitySet="ソフトウェアMST" />
+            <End Role="ソフトウェアバージョンMST" EntitySet="ソフトウェアバージョンMST" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CMDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="JOB_サーバーソフトウェアバージョンREL">
+          <Key>
+            <PropertyRef Name="JOB_サーバーソフトウェアバージョンID" />
+          </Key>
+          <Property Name="JOB_サーバーソフトウェアバージョンID" Type="Int32" Nullable="false" />
+          <Property Name="JOBID" Type="Int32" />
+          <Property Name="サーバーソフトウェアバージョンID" Type="Int32" />
+          <Property Name="登録日時" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="登録者" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="JOBMST" Relationship="Self.FK_JOB_サーバーソフトウェアバージョンREL_JOBMST" FromRole="JOB_サーバーソフトウェアバージョンREL" ToRole="JOBMST" />
+          <NavigationProperty Name="サーバー_ソフトウェアバージョンREL" Relationship="Self.FK_JOB_サーバーソフトウェアバージョンREL_サーバー_ソフトウェアバージョンREL" FromRole="JOB_サーバーソフトウェアバージョンREL" ToRole="サーバー_ソフトウェアバージョンREL" />
+        </EntityType>
+        <EntityType Name="JOB_担当者REL">
+          <Key>
+            <PropertyRef Name="JOBID" />
+            <PropertyRef Name="担当者ID" />
+          </Key>
+          <Property Name="JOBID" Type="Int32" Nullable="false" />
+          <Property Name="担当者ID" Type="Int32" Nullable="false" />
+          <Property Name="登録日時" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="登録者" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="JOBMST" Relationship="Self.FK_JOB_担当者REL_JOBMST" FromRole="JOB_担当者REL" ToRole="JOBMST" />
+          <NavigationProperty Name="担当者MST" Relationship="Self.FK_JOB_担当者REL_担当者MST" FromRole="JOB_担当者REL" ToRole="担当者MST" />
+        </EntityType>
+        <EntityType Name="JOBMST">
+          <Key>
+            <PropertyRef Name="JOBID" />
+          </Key>
+          <Property Name="JOBID" Type="Int32" Nullable="false" />
+          <Property Name="JOB名" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="顧客ID" Type="Int32" Nullable="false" />
+          <Property Name="登録日時" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="登録者" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="JOB_サーバーソフトウェアバージョンREL" Relationship="Self.FK_JOB_サーバーソフトウェアバージョンREL_JOBMST" FromRole="JOBMST" ToRole="JOB_サーバーソフトウェアバージョンREL" />
+          <NavigationProperty Name="JOB_担当者REL" Relationship="Self.FK_JOB_担当者REL_JOBMST" FromRole="JOBMST" ToRole="JOB_担当者REL" />
+          <NavigationProperty Name="顧客MST" Relationship="Self.FK_JOBMST_顧客MST" FromRole="JOBMST" ToRole="顧客MST" />
+        </EntityType>
+        <EntityType Name="サーバー_ソフトウェアバージョンREL">
+          <Key>
+            <PropertyRef Name="サーバーソフトウェアバージョンID" />
+          </Key>
+          <Property Name="サーバーソフトウェアバージョンID" Type="Int32" Nullable="false" />
+          <Property Name="サーバーID" Type="Int32" Nullable="false" />
+          <Property Name="ソフトウェアバージョンID" Type="Int32" Nullable="false" />
+          <Property Name="登録日時" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="登録者" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="JOB_サーバーソフトウェアバージョンREL" Relationship="Self.FK_JOB_サーバーソフトウェアバージョンREL_サーバー_ソフトウェアバージョンREL" FromRole="サーバー_ソフトウェアバージョンREL" ToRole="JOB_サーバーソフトウェアバージョンREL" />
+          <NavigationProperty Name="サーバーMST" Relationship="Self.FK_サーバー_ソフトウェアバージョンREL_サーバーMST" FromRole="サーバー_ソフトウェアバージョンREL" ToRole="サーバーMST" />
+          <NavigationProperty Name="ソフトウェアバージョンMST" Relationship="Self.FK_サーバー_ソフトウェアバージョンREL_ソフトウェアバージョンMST" FromRole="サーバー_ソフトウェアバージョンREL" ToRole="ソフトウェアバージョンMST" />
+        </EntityType>
+        <EntityType Name="サーバーMST">
+          <Key>
+            <PropertyRef Name="サーバーID" />
+          </Key>
+          <Property Name="サーバーID" Type="Int32" Nullable="false" />
+          <Property Name="サーバー名" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="サーバー管理者ID" Type="Int32" Nullable="false" />
+          <Property Name="登録日時" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="登録者" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="サーバー_ソフトウェアバージョンREL" Relationship="Self.FK_サーバー_ソフトウェアバージョンREL_サーバーMST" FromRole="サーバーMST" ToRole="サーバー_ソフトウェアバージョンREL" />
+          <NavigationProperty Name="サーバー管理者MST" Relationship="Self.FK_サーバーMST_サーバー管理者MST" FromRole="サーバーMST" ToRole="サーバー管理者MST" />
+        </EntityType>
+        <EntityType Name="サーバー管理者MST">
+          <Key>
+            <PropertyRef Name="サーバー管理者ID" />
+          </Key>
+          <Property Name="サーバー管理者ID" Type="Int32" Nullable="false" />
+          <Property Name="サーバー管理者名" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="登録日時" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="登録者" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="サーバーMST" Relationship="Self.FK_サーバーMST_サーバー管理者MST" FromRole="サーバー管理者MST" ToRole="サーバーMST" />
+        </EntityType>
+        <EntityType Name="ソフトウェアMST">
+          <Key>
+            <PropertyRef Name="ソフトウェアID" />
+          </Key>
+          <Property Name="ソフトウェアID" Type="Int32" Nullable="false" />
+          <Property Name="ソフトウェア名" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="登録日時" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="登録者" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="ソフトウェアバージョンMST" Relationship="Self.FK_ソフトウェアバージョンMST_ソフトウェアMST" FromRole="ソフトウェアMST" ToRole="ソフトウェアバージョンMST" />
+        </EntityType>
+        <EntityType Name="ソフトウェアバージョンMST">
+          <Key>
+            <PropertyRef Name="ソフトウェアバージョンID" />
+          </Key>
+          <Property Name="ソフトウェアバージョンID" Type="Int32" Nullable="false" />
+          <Property Name="ソフトウェアID" Type="Int32" Nullable="false" />
+          <Property Name="バージョン" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="登録日時" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="登録者" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="サーバー_ソフトウェアバージョンREL" Relationship="Self.FK_サーバー_ソフトウェアバージョンREL_ソフトウェアバージョンMST" FromRole="ソフトウェアバージョンMST" ToRole="サーバー_ソフトウェアバージョンREL" />
+          <NavigationProperty Name="ソフトウェアMST" Relationship="Self.FK_ソフトウェアバージョンMST_ソフトウェアMST" FromRole="ソフトウェアバージョンMST" ToRole="ソフトウェアMST" />
+        </EntityType>
+        <EntityType Name="顧客MST">
+          <Key>
+            <PropertyRef Name="顧客ID" />
+          </Key>
+          <Property Name="顧客ID" Type="Int32" Nullable="false" />
+          <Property Name="顧客名" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="登録日時" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="登録者" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="JOBMST" Relationship="Self.FK_JOBMST_顧客MST" FromRole="顧客MST" ToRole="JOBMST" />
+        </EntityType>
+        <EntityType Name="担当者MST">
+          <Key>
+            <PropertyRef Name="担当者ID" />
+          </Key>
+          <Property Name="担当者ID" Type="Int32" Nullable="false" />
+          <Property Name="担当者名" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="登録日時" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="登録者" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="JOB_担当者REL" Relationship="Self.FK_JOB_担当者REL_担当者MST" FromRole="担当者MST" ToRole="JOB_担当者REL" />
+        </EntityType>
+        <Association Name="FK_JOB_サーバーソフトウェアバージョンREL_JOBMST">
+          <End Role="JOBMST" Type="Self.JOBMST" Multiplicity="0..1" />
+          <End Role="JOB_サーバーソフトウェアバージョンREL" Type="Self.JOB_サーバーソフトウェアバージョンREL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JOBMST">
+              <PropertyRef Name="JOBID" />
+            </Principal>
+            <Dependent Role="JOB_サーバーソフトウェアバージョンREL">
+              <PropertyRef Name="JOBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_JOB_サーバーソフトウェアバージョンREL_サーバー_ソフトウェアバージョンREL">
+          <End Role="サーバー_ソフトウェアバージョンREL" Type="Self.サーバー_ソフトウェアバージョンREL" Multiplicity="0..1" />
+          <End Role="JOB_サーバーソフトウェアバージョンREL" Type="Self.JOB_サーバーソフトウェアバージョンREL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="サーバー_ソフトウェアバージョンREL">
+              <PropertyRef Name="サーバーソフトウェアバージョンID" />
+            </Principal>
+            <Dependent Role="JOB_サーバーソフトウェアバージョンREL">
+              <PropertyRef Name="サーバーソフトウェアバージョンID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_JOB_担当者REL_JOBMST">
+          <End Role="JOBMST" Type="Self.JOBMST" Multiplicity="1" />
+          <End Role="JOB_担当者REL" Type="Self.JOB_担当者REL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JOBMST">
+              <PropertyRef Name="JOBID" />
+            </Principal>
+            <Dependent Role="JOB_担当者REL">
+              <PropertyRef Name="JOBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_JOB_担当者REL_担当者MST">
+          <End Role="担当者MST" Type="Self.担当者MST" Multiplicity="1" />
+          <End Role="JOB_担当者REL" Type="Self.JOB_担当者REL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="担当者MST">
+              <PropertyRef Name="担当者ID" />
+            </Principal>
+            <Dependent Role="JOB_担当者REL">
+              <PropertyRef Name="担当者ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_JOBMST_顧客MST">
+          <End Role="顧客MST" Type="Self.顧客MST" Multiplicity="1" />
+          <End Role="JOBMST" Type="Self.JOBMST" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="顧客MST">
+              <PropertyRef Name="顧客ID" />
+            </Principal>
+            <Dependent Role="JOBMST">
+              <PropertyRef Name="顧客ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_サーバー_ソフトウェアバージョンREL_サーバーMST">
+          <End Role="サーバーMST" Type="Self.サーバーMST" Multiplicity="1" />
+          <End Role="サーバー_ソフトウェアバージョンREL" Type="Self.サーバー_ソフトウェアバージョンREL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="サーバーMST">
+              <PropertyRef Name="サーバーID" />
+            </Principal>
+            <Dependent Role="サーバー_ソフトウェアバージョンREL">
+              <PropertyRef Name="サーバーID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_サーバー_ソフトウェアバージョンREL_ソフトウェアバージョンMST">
+          <End Role="ソフトウェアバージョンMST" Type="Self.ソフトウェアバージョンMST" Multiplicity="1" />
+          <End Role="サーバー_ソフトウェアバージョンREL" Type="Self.サーバー_ソフトウェアバージョンREL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ソフトウェアバージョンMST">
+              <PropertyRef Name="ソフトウェアバージョンID" />
+            </Principal>
+            <Dependent Role="サーバー_ソフトウェアバージョンREL">
+              <PropertyRef Name="ソフトウェアバージョンID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_サーバーMST_サーバー管理者MST">
+          <End Role="サーバー管理者MST" Type="Self.サーバー管理者MST" Multiplicity="1" />
+          <End Role="サーバーMST" Type="Self.サーバーMST" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="サーバー管理者MST">
+              <PropertyRef Name="サーバー管理者ID" />
+            </Principal>
+            <Dependent Role="サーバーMST">
+              <PropertyRef Name="サーバー管理者ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ソフトウェアバージョンMST_ソフトウェアMST">
+          <End Role="ソフトウェアMST" Type="Self.ソフトウェアMST" Multiplicity="1" />
+          <End Role="ソフトウェアバージョンMST" Type="Self.ソフトウェアバージョンMST" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ソフトウェアMST">
+              <PropertyRef Name="ソフトウェアID" />
+            </Principal>
+            <Dependent Role="ソフトウェアバージョンMST">
+              <PropertyRef Name="ソフトウェアID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CMDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="JOB_サーバーソフトウェアバージョンREL" EntityType="Self.JOB_サーバーソフトウェアバージョンREL" />
+          <EntitySet Name="JOB_担当者REL" EntityType="Self.JOB_担当者REL" />
+          <EntitySet Name="JOBMST" EntityType="Self.JOBMST" />
+          <EntitySet Name="サーバー_ソフトウェアバージョンREL" EntityType="Self.サーバー_ソフトウェアバージョンREL" />
+          <EntitySet Name="サーバーMST" EntityType="Self.サーバーMST" />
+          <EntitySet Name="サーバー管理者MST" EntityType="Self.サーバー管理者MST" />
+          <EntitySet Name="ソフトウェアMST" EntityType="Self.ソフトウェアMST" />
+          <EntitySet Name="ソフトウェアバージョンMST" EntityType="Self.ソフトウェアバージョンMST" />
+          <EntitySet Name="顧客MST" EntityType="Self.顧客MST" />
+          <EntitySet Name="担当者MST" EntityType="Self.担当者MST" />
+          <AssociationSet Name="FK_JOB_サーバーソフトウェアバージョンREL_JOBMST" Association="Self.FK_JOB_サーバーソフトウェアバージョンREL_JOBMST">
+            <End Role="JOBMST" EntitySet="JOBMST" />
+            <End Role="JOB_サーバーソフトウェアバージョンREL" EntitySet="JOB_サーバーソフトウェアバージョンREL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JOB_サーバーソフトウェアバージョンREL_サーバー_ソフトウェアバージョンREL" Association="Self.FK_JOB_サーバーソフトウェアバージョンREL_サーバー_ソフトウェアバージョンREL">
+            <End Role="サーバー_ソフトウェアバージョンREL" EntitySet="サーバー_ソフトウェアバージョンREL" />
+            <End Role="JOB_サーバーソフトウェアバージョンREL" EntitySet="JOB_サーバーソフトウェアバージョンREL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JOB_担当者REL_JOBMST" Association="Self.FK_JOB_担当者REL_JOBMST">
+            <End Role="JOBMST" EntitySet="JOBMST" />
+            <End Role="JOB_担当者REL" EntitySet="JOB_担当者REL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JOB_担当者REL_担当者MST" Association="Self.FK_JOB_担当者REL_担当者MST">
+            <End Role="担当者MST" EntitySet="担当者MST" />
+            <End Role="JOB_担当者REL" EntitySet="JOB_担当者REL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JOBMST_顧客MST" Association="Self.FK_JOBMST_顧客MST">
+            <End Role="顧客MST" EntitySet="顧客MST" />
+            <End Role="JOBMST" EntitySet="JOBMST" />
+          </AssociationSet>
+          <AssociationSet Name="FK_サーバー_ソフトウェアバージョンREL_サーバーMST" Association="Self.FK_サーバー_ソフトウェアバージョンREL_サーバーMST">
+            <End Role="サーバーMST" EntitySet="サーバーMST" />
+            <End Role="サーバー_ソフトウェアバージョンREL" EntitySet="サーバー_ソフトウェアバージョンREL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_サーバー_ソフトウェアバージョンREL_ソフトウェアバージョンMST" Association="Self.FK_サーバー_ソフトウェアバージョンREL_ソフトウェアバージョンMST">
+            <End Role="ソフトウェアバージョンMST" EntitySet="ソフトウェアバージョンMST" />
+            <End Role="サーバー_ソフトウェアバージョンREL" EntitySet="サーバー_ソフトウェアバージョンREL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_サーバーMST_サーバー管理者MST" Association="Self.FK_サーバーMST_サーバー管理者MST">
+            <End Role="サーバー管理者MST" EntitySet="サーバー管理者MST" />
+            <End Role="サーバーMST" EntitySet="サーバーMST" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ソフトウェアバージョンMST_ソフトウェアMST" Association="Self.FK_ソフトウェアバージョンMST_ソフトウェアMST">
+            <End Role="ソフトウェアMST" EntitySet="ソフトウェアMST" />
+            <End Role="ソフトウェアバージョンMST" EntitySet="ソフトウェアバージョンMST" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CMDBModelStoreContainer" CdmEntityContainer="CMDBEntities">
+          <EntitySetMapping Name="JOB_サーバーソフトウェアバージョンREL">
+            <EntityTypeMapping TypeName="CMDBModel.JOB_サーバーソフトウェアバージョンREL">
+              <MappingFragment StoreEntitySet="JOB_サーバーソフトウェアバージョンREL">
+                <ScalarProperty Name="JOB_サーバーソフトウェアバージョンID" ColumnName="JOB_サーバーソフトウェアバージョンID" />
+                <ScalarProperty Name="JOBID" ColumnName="JOBID" />
+                <ScalarProperty Name="サーバーソフトウェアバージョンID" ColumnName="サーバーソフトウェアバージョンID" />
+                <ScalarProperty Name="登録日時" ColumnName="登録日時" />
+                <ScalarProperty Name="登録者" ColumnName="登録者" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JOB_担当者REL">
+            <EntityTypeMapping TypeName="CMDBModel.JOB_担当者REL">
+              <MappingFragment StoreEntitySet="JOB_担当者REL">
+                <ScalarProperty Name="JOBID" ColumnName="JOBID" />
+                <ScalarProperty Name="担当者ID" ColumnName="担当者ID" />
+                <ScalarProperty Name="登録日時" ColumnName="登録日時" />
+                <ScalarProperty Name="登録者" ColumnName="登録者" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JOBMST">
+            <EntityTypeMapping TypeName="CMDBModel.JOBMST">
+              <MappingFragment StoreEntitySet="JOBMST">
+                <ScalarProperty Name="JOBID" ColumnName="JOBID" />
+                <ScalarProperty Name="JOB名" ColumnName="JOB名" />
+                <ScalarProperty Name="顧客ID" ColumnName="顧客ID" />
+                <ScalarProperty Name="登録日時" ColumnName="登録日時" />
+                <ScalarProperty Name="登録者" ColumnName="登録者" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="サーバー_ソフトウェアバージョンREL">
+            <EntityTypeMapping TypeName="CMDBModel.サーバー_ソフトウェアバージョンREL">
+              <MappingFragment StoreEntitySet="サーバー_ソフトウェアバージョンREL">
+                <ScalarProperty Name="サーバーソフトウェアバージョンID" ColumnName="サーバーソフトウェアバージョンID" />
+                <ScalarProperty Name="サーバーID" ColumnName="サーバーID" />
+                <ScalarProperty Name="ソフトウェアバージョンID" ColumnName="ソフトウェアバージョンID" />
+                <ScalarProperty Name="登録日時" ColumnName="登録日時" />
+                <ScalarProperty Name="登録者" ColumnName="登録者" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="サーバーMST">
+            <EntityTypeMapping TypeName="CMDBModel.サーバーMST">
+              <MappingFragment StoreEntitySet="サーバーMST">
+                <ScalarProperty Name="サーバーID" ColumnName="サーバーID" />
+                <ScalarProperty Name="サーバー名" ColumnName="サーバー名" />
+                <ScalarProperty Name="サーバー管理者ID" ColumnName="サーバー管理者ID" />
+                <ScalarProperty Name="登録日時" ColumnName="登録日時" />
+                <ScalarProperty Name="登録者" ColumnName="登録者" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="サーバー管理者MST">
+            <EntityTypeMapping TypeName="CMDBModel.サーバー管理者MST">
+              <MappingFragment StoreEntitySet="サーバー管理者MST">
+                <ScalarProperty Name="サーバー管理者ID" ColumnName="サーバー管理者ID" />
+                <ScalarProperty Name="サーバー管理者名" ColumnName="サーバー管理者名" />
+                <ScalarProperty Name="登録日時" ColumnName="登録日時" />
+                <ScalarProperty Name="登録者" ColumnName="登録者" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ソフトウェアMST">
+            <EntityTypeMapping TypeName="CMDBModel.ソフトウェアMST">
+              <MappingFragment StoreEntitySet="ソフトウェアMST">
+                <ScalarProperty Name="ソフトウェアID" ColumnName="ソフトウェアID" />
+                <ScalarProperty Name="ソフトウェア名" ColumnName="ソフトウェア名" />
+                <ScalarProperty Name="登録日時" ColumnName="登録日時" />
+                <ScalarProperty Name="登録者" ColumnName="登録者" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ソフトウェアバージョンMST">
+            <EntityTypeMapping TypeName="CMDBModel.ソフトウェアバージョンMST">
+              <MappingFragment StoreEntitySet="ソフトウェアバージョンMST">
+                <ScalarProperty Name="ソフトウェアバージョンID" ColumnName="ソフトウェアバージョンID" />
+                <ScalarProperty Name="ソフトウェアID" ColumnName="ソフトウェアID" />
+                <ScalarProperty Name="バージョン" ColumnName="バージョン" />
+                <ScalarProperty Name="登録日時" ColumnName="登録日時" />
+                <ScalarProperty Name="登録者" ColumnName="登録者" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="顧客MST">
+            <EntityTypeMapping TypeName="CMDBModel.顧客MST">
+              <MappingFragment StoreEntitySet="顧客MST">
+                <ScalarProperty Name="顧客ID" ColumnName="顧客ID" />
+                <ScalarProperty Name="顧客名" ColumnName="顧客名" />
+                <ScalarProperty Name="登録日時" ColumnName="登録日時" />
+                <ScalarProperty Name="登録者" ColumnName="登録者" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="担当者MST">
+            <EntityTypeMapping TypeName="CMDBModel.担当者MST">
+              <MappingFragment StoreEntitySet="担当者MST">
+                <ScalarProperty Name="担当者ID" ColumnName="担当者ID" />
+                <ScalarProperty Name="担当者名" ColumnName="担当者名" />
+                <ScalarProperty Name="登録日時" ColumnName="登録日時" />
+                <ScalarProperty Name="登録者" ColumnName="登録者" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="なし" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
