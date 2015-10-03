@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.サーバー管理者IDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,6 +48,7 @@
             // dataGridView1
             // 
             this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -58,14 +61,17 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 21;
-            this.dataGridView1.Size = new System.Drawing.Size(486, 262);
+            this.dataGridView1.Size = new System.Drawing.Size(584, 162);
             this.dataGridView1.TabIndex = 0;
             // 
             // サーバー管理者IDDataGridViewTextBoxColumn
             // 
             this.サーバー管理者IDDataGridViewTextBoxColumn.DataPropertyName = "サーバー管理者ID";
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            this.サーバー管理者IDDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
             this.サーバー管理者IDDataGridViewTextBoxColumn.HeaderText = "サーバー管理者ID";
             this.サーバー管理者IDDataGridViewTextBoxColumn.Name = "サーバー管理者IDDataGridViewTextBoxColumn";
+            this.サーバー管理者IDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // サーバー管理者名DataGridViewTextBoxColumn
             // 
@@ -76,8 +82,11 @@
             // 登録日時DataGridViewTextBoxColumn
             // 
             this.登録日時DataGridViewTextBoxColumn.DataPropertyName = "登録日時";
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            this.登録日時DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
             this.登録日時DataGridViewTextBoxColumn.HeaderText = "登録日時";
             this.登録日時DataGridViewTextBoxColumn.Name = "登録日時DataGridViewTextBoxColumn";
+            this.登録日時DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // 登録者DataGridViewTextBoxColumn
             // 
@@ -89,7 +98,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(486, 262);
+            this.ClientSize = new System.Drawing.Size(584, 162);
             this.Controls.Add(this.dataGridView1);
             this.Name = "SubFormサーバー管理者MST";
             this.Text = "サーバー管理者MST";

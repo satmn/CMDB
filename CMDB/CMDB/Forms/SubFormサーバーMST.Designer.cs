@@ -29,13 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.サーバーIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.サーバー名DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.サーバー管理者IDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.登録日時DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.登録者DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
@@ -56,18 +58,17 @@
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(284, 262);
+            this.dataGridView1.Size = new System.Drawing.Size(584, 162);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // bindingSource1
-            // 
-            this.bindingSource1.DataSource = typeof(CMDB.Models.サーバーMST);
             // 
             // サーバーIDDataGridViewTextBoxColumn
             // 
             this.サーバーIDDataGridViewTextBoxColumn.DataPropertyName = "サーバーID";
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            this.サーバーIDDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
             this.サーバーIDDataGridViewTextBoxColumn.HeaderText = "サーバーID";
             this.サーバーIDDataGridViewTextBoxColumn.Name = "サーバーIDDataGridViewTextBoxColumn";
+            this.サーバーIDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // サーバー名DataGridViewTextBoxColumn
             // 
@@ -84,8 +85,11 @@
             // 登録日時DataGridViewTextBoxColumn
             // 
             this.登録日時DataGridViewTextBoxColumn.DataPropertyName = "登録日時";
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            this.登録日時DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.登録日時DataGridViewTextBoxColumn.HeaderText = "登録日時";
             this.登録日時DataGridViewTextBoxColumn.Name = "登録日時DataGridViewTextBoxColumn";
+            this.登録日時DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // 登録者DataGridViewTextBoxColumn
             // 
@@ -93,11 +97,15 @@
             this.登録者DataGridViewTextBoxColumn.HeaderText = "登録者";
             this.登録者DataGridViewTextBoxColumn.Name = "登録者DataGridViewTextBoxColumn";
             // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataSource = typeof(CMDB.Models.サーバーMST);
+            // 
             // SubFormサーバーMST
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 262);
+            this.ClientSize = new System.Drawing.Size(584, 162);
             this.Controls.Add(this.dataGridView1);
             this.Name = "SubFormサーバーMST";
             this.Text = "サーバーMST";

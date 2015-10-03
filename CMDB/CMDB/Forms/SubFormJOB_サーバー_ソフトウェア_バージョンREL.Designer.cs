@@ -29,13 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.jOBサーバーソフトウェアバージョンIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.jOBIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.サーバーソフトウェアバージョンIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.登録日時DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.登録者DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
@@ -57,14 +59,21 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 21;
-            this.dataGridView1.Size = new System.Drawing.Size(763, 262);
+            this.dataGridView1.Size = new System.Drawing.Size(584, 162);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataSource = typeof(CMDB.Models.JOB_サーバーソフトウェアバージョンREL);
             // 
             // jOBサーバーソフトウェアバージョンIDDataGridViewTextBoxColumn
             // 
             this.jOBサーバーソフトウェアバージョンIDDataGridViewTextBoxColumn.DataPropertyName = "JOB_サーバーソフトウェアバージョンID";
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            this.jOBサーバーソフトウェアバージョンIDDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
             this.jOBサーバーソフトウェアバージョンIDDataGridViewTextBoxColumn.HeaderText = "JOB_サーバーソフトウェアバージョンID";
             this.jOBサーバーソフトウェアバージョンIDDataGridViewTextBoxColumn.Name = "jOBサーバーソフトウェアバージョンIDDataGridViewTextBoxColumn";
+            this.jOBサーバーソフトウェアバージョンIDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // jOBIDDataGridViewTextBoxColumn
             // 
@@ -81,8 +90,11 @@
             // 登録日時DataGridViewTextBoxColumn
             // 
             this.登録日時DataGridViewTextBoxColumn.DataPropertyName = "登録日時";
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            this.登録日時DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.登録日時DataGridViewTextBoxColumn.HeaderText = "登録日時";
             this.登録日時DataGridViewTextBoxColumn.Name = "登録日時DataGridViewTextBoxColumn";
+            this.登録日時DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // 登録者DataGridViewTextBoxColumn
             // 
@@ -90,15 +102,11 @@
             this.登録者DataGridViewTextBoxColumn.HeaderText = "登録者";
             this.登録者DataGridViewTextBoxColumn.Name = "登録者DataGridViewTextBoxColumn";
             // 
-            // bindingSource1
-            // 
-            this.bindingSource1.DataSource = typeof(CMDB.Models.JOB_サーバーソフトウェアバージョンREL);
-            // 
             // SubFormJOB_サーバー_ソフトウェア_バージョンREL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(763, 262);
+            this.ClientSize = new System.Drawing.Size(584, 162);
             this.Controls.Add(this.dataGridView1);
             this.Name = "SubFormJOB_サーバー_ソフトウェア_バージョンREL";
             this.Text = "JOB_サーバー_ソフトウェア_バージョンREL";

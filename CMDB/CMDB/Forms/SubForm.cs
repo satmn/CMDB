@@ -40,6 +40,9 @@ namespace CMDB.Forms
             List<string> colparams = new List<string>();
             foreach (DataGridViewColumn col in DataGridView.Columns)
             {
+                if (col.ReadOnly)
+                    continue;
+
                 SqlParameter p1 = new SqlParameter();
                 p1.ParameterName = "@" + col.DataPropertyName;
                 p1.SourceColumn = col.DataPropertyName;
@@ -111,12 +114,25 @@ namespace CMDB.Forms
             {
                 DataGridView dgv = (DataGridView)sender;
 
-                if (e.ColumnIndex == dgv.ColumnCount - 1)
                 {
                     BindingSource.EndEdit();
                     DataTable dt = (DataTable)BindingSource.DataSource;
                     DataTable changedTable = dt.GetChanges();
                     dataAdapter.Update(dt);
+                    if (changedTable != null && changedTable.Rows != null)
+                    {
+                        bool add = false;
+                        foreach (System.Data.DataRow row in changedTable.Rows)
+                        {
+                            if (row.RowState == DataRowState.Added)
+                            {
+                                add = true;
+                                break;
+                            }
+                        }
+                        if (add)
+                            SelectFromDB();
+                    }
                 }
 
                 ////最終行最終列の場合は、何もしない

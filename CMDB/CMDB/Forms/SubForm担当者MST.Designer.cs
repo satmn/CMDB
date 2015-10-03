@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.担当者IDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,7 +56,7 @@
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(519, 262);
+            this.dataGridView1.Size = new System.Drawing.Size(584, 162);
             this.dataGridView1.TabIndex = 0;
             // 
             // bindingSource1
@@ -64,8 +66,11 @@
             // 担当者IDDataGridViewTextBoxColumn
             // 
             this.担当者IDDataGridViewTextBoxColumn.DataPropertyName = "担当者ID";
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            this.担当者IDDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
             this.担当者IDDataGridViewTextBoxColumn.HeaderText = "担当者ID";
             this.担当者IDDataGridViewTextBoxColumn.Name = "担当者IDDataGridViewTextBoxColumn";
+            this.担当者IDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // 担当者名DataGridViewTextBoxColumn
             // 
@@ -76,8 +81,11 @@
             // 登録日時DataGridViewTextBoxColumn
             // 
             this.登録日時DataGridViewTextBoxColumn.DataPropertyName = "登録日時";
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            this.登録日時DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.登録日時DataGridViewTextBoxColumn.HeaderText = "登録日時";
             this.登録日時DataGridViewTextBoxColumn.Name = "登録日時DataGridViewTextBoxColumn";
+            this.登録日時DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // 登録者DataGridViewTextBoxColumn
             // 
@@ -89,7 +97,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(519, 262);
+            this.ClientSize = new System.Drawing.Size(584, 162);
             this.Controls.Add(this.dataGridView1);
             this.Name = "SubForm担当者MST";
             this.Text = "担当者MST";
