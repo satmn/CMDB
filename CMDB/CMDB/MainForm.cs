@@ -283,6 +283,9 @@ JOBMST.JOB名,
 
             string connectionStringKey = "CMDB.Properties.Settings.CMDB";
             string selectQueryString = string.Format(queryBaseString, whereQueryString);
+
+            log.Info(selectQueryString);
+
             string connectionString = ConfigurationManager.ConnectionStrings[connectionStringKey].ConnectionString;
             using (SqlConnection conn = new SqlConnection(connectionString))
             using (SqlDataAdapter dataAdapter = new SqlDataAdapter(selectQueryString, conn))
@@ -380,7 +383,14 @@ JOBMST.JOB名,
 
         private void buttonSearch_Click(object sender, EventArgs e)
         {
-            SeachJob();
+            try
+            {
+                SeachJob();
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.ToString());
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
