@@ -27,7 +27,6 @@ namespace CMDB.Forms
             this.DataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.DataGridView_DataError);
             this.DataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_CellEndEdit);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SubForm_FormClosing);
-            this.DataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DataGridView_KeyDown);
 
             string connectionString = ConfigurationManager.ConnectionStrings[connectionStringKey].ConnectionString;
             SqlConnection conn = new SqlConnection(connectionString);
@@ -80,32 +79,11 @@ namespace CMDB.Forms
 
         virtual public void SelectFromDB()
         {
+            using (table) { }
             table = new DataTable();
             dataAdapter.Fill(table);
 
             BindingSource.DataSource = table;
-        }
-
-        //DataGridView1のKeyDownイベントハンドラ
-        protected void DataGridView_KeyDown(object sender, KeyEventArgs e)
-        {
-            //if (e.KeyCode == Keys.Enter)
-            //{
-            //    DataGridView dgv = (DataGridView)sender;
-
-            //    //最終行最終列の場合は、何もしない（最終行最終列で
-            //    //Tabキーを送信すると、次のコントロールにフォーカスが移動）
-            //    if ((dgv.CurrentCellAddress.X == dgv.ColumnCount - 1) &&
-            //        (dgv.CurrentCellAddress.Y == dgv.RowCount - 1))
-            //    {
-            //        return;
-            //    }
-
-            //    //Tabキーを送信する
-            //    SendKeys.Send("{TAB}");
-            //    //フォーカスが下に移動しないようにする
-            //    e.Handled = true;
-            //}
         }
 
         protected void DataGridView_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -134,22 +112,6 @@ namespace CMDB.Forms
                             SelectFromDB();
                     }
                 }
-
-                ////最終行最終列の場合は、何もしない
-                //if ((e.ColumnIndex == dgv.ColumnCount - 1) &&
-                //    (e.RowIndex == dgv.RowCount - 1))
-                //{
-                //    return;
-                //}
-
-                ////最終行以外では、フォーカスを上に移動
-                ////（最終行以外では、編集後、フォーカスが下に移動するため）
-                //if (e.RowIndex < dgv.RowCount - 1)
-                //{
-                //    SendKeys.Send("{UP}");
-                //}
-                ////Tabキーを送信する
-                //SendKeys.Send("{TAB}");
 
                 DataGridView dataGridView = sender as DataGridView;
                 dataGridView.Rows[e.RowIndex].ErrorText = string.Empty;
