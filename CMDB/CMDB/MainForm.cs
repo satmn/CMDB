@@ -106,6 +106,17 @@ namespace CMDB
             public string DisplayName { get; set; }
         }
 
+        class ソフトウェアバージョン
+        {
+            public int ソフトウェアバージョンID { get; set; }
+            public string ソフトウェア名 { get; set; }
+            public string バージョン { get; set; }
+            public string ソフトウェアバージョンバージョン名
+            {
+                get { return ソフトウェア名 + " " + バージョン; }
+            }
+        }
+
         public MainForm()
         {
             InitializeComponent();
@@ -348,17 +359,6 @@ JOBMST.JOB名,
                          ソフトウェア名 = x.ソフトウェアMST.ソフトウェア名,
                          バージョン = x.バージョン
                      }).ToList());
-            }
-        }
-
-        class ソフトウェアバージョン
-        {
-            public int ソフトウェアバージョンID { get; set; }
-            public string ソフトウェア名 { get; set; }
-            public string バージョン { get; set; }
-            public string ソフトウェアバージョンバージョン名
-            {
-                get { return ソフトウェア名 + " " + バージョン; }
             }
         }
 
