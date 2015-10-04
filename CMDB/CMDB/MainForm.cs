@@ -14,37 +14,7 @@ namespace CMDB
     public partial class MainForm : Form
     {
         readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-        Dictionary<Type, ControlMapper> maps;
-        public MainForm()
-        {
-            InitializeComponent();
-        }
-
-        class ControlMapper
-        {
-            public Type FormType { get; set; }
-            public dynamic DataSource { get; set; }
-            public SubForm FormMaint { get; set; }
-            public string DisplayName { get; set; }
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            try
-            {
-                InitControll();
-
-                SetupControll();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-        }
-
-        private void InitControll()
-        {
-            maps = new Dictionary<Type, ControlMapper>()
+        Dictionary<Type, ControlMapper> maps = new Dictionary<Type, ControlMapper>()
                 {
                     {
                         typeof(SubFormJOBMST),
@@ -128,6 +98,35 @@ namespace CMDB
                     },
                 };
 
+        class ControlMapper
+        {
+            public Type FormType { get; set; }
+            public dynamic DataSource { get; set; }
+            public SubForm FormMaint { get; set; }
+            public string DisplayName { get; set; }
+        }
+
+        public MainForm()
+        {
+            InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                InitControll();
+
+                SetupControll();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void InitControll()
+        {
             List<ControlMapper> list = new List<ControlMapper>();
             foreach (KeyValuePair<Type, ControlMapper> pair in maps)
             {
@@ -427,119 +426,6 @@ JOBMST.JOB名,
                     break;
                 }
             }
-        }
-
-        private void dataGridView1_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            //List<SearchModelFromJob> list = bindingSource1.DataSource as List<SearchModelFromJob>;
-            //SortOrder sortOrder = dataGridView1.Columns[e.ColumnIndex].HeaderCell.SortGlyphDirection;
-            //switch(sortOrder)
-            //{
-            //    case SortOrder.Descending:
-            //    case SortOrder.None:
-            //        {
-            //            switch (e.ColumnIndex)
-            //            {
-            //                case 0:
-            //                    list = list.OrderBy(item => item.JOBID).ToList();
-            //                    bindingSource1.Sort = "JOBID";
-            //                    break;
-            //                case 1:
-            //                    list = list.OrderBy(item => item.JOB名).ToList();
-            //                    break;
-            //                case 2:
-            //                    list = list.OrderBy(item => item.顧客ID).ToList();
-            //                    break;
-            //                case 3:
-            //                    list = list.OrderBy(item => item.顧客名).ToList();
-            //                    break;
-            //                case 4:
-            //                    list = list.OrderBy(item => item.担当者ID).ToList();
-            //                    break;
-            //                case 5:
-            //                    list = list.OrderBy(item => item.担当者名).ToList();
-            //                    break;
-            //                case 6:
-            //                    list = list.OrderBy(item => item.サーバーID).ToList();
-            //                    break;
-            //                case 7:
-            //                    list = list.OrderBy(item => item.サーバー名).ToList();
-            //                    break;
-            //                case 8:
-            //                    list = list.OrderBy(item => item.サーバー管理者ID).ToList();
-            //                    break;
-            //                case 9:
-            //                    list = list.OrderBy(item => item.サーバー管理者名).ToList();
-            //                    break;
-            //                case 10:
-            //                    list = list.OrderBy(item => item.ソフトウェアバージョンID).ToList();
-            //                    break;
-            //                case 11:
-            //                    list = list.OrderBy(item => item.ソフトウェアID).ToList();
-            //                    break;
-            //                case 12:
-            //                    list = list.OrderBy(item => item.ソフトウェア名).ToList();
-            //                    break;
-            //                case 13:
-            //                    list = list.OrderBy(item => item.バージョン).ToList();
-            //                    break;
-            //            }
-            //            dataGridView1.Columns[e.ColumnIndex].HeaderCell.SortGlyphDirection = SortOrder.Ascending;
-            //            break;
-            //        }
-            //    default:
-            //        {
-            //            switch (e.ColumnIndex)
-            //            {
-            //                case 0:
-            //                    list = list.OrderByDescending(item => item.JOBID).ToList();
-            //                    break;
-            //                case 1:
-            //                    list = list.OrderByDescending(item => item.JOB名).ToList();
-            //                    break;
-            //                case 2:
-            //                    list = list.OrderByDescending(item => item.顧客ID).ToList();
-            //                    break;
-            //                case 3:
-            //                    list = list.OrderByDescending(item => item.顧客名).ToList();
-            //                    break;
-            //                case 4:
-            //                    list = list.OrderByDescending(item => item.担当者ID).ToList();
-            //                    break;
-            //                case 5:
-            //                    list = list.OrderByDescending(item => item.担当者名).ToList();
-            //                    break;
-            //                case 6:
-            //                    list = list.OrderByDescending(item => item.サーバーID).ToList();
-            //                    break;
-            //                case 7:
-            //                    list = list.OrderByDescending(item => item.サーバー名).ToList();
-            //                    break;
-            //                case 8:
-            //                    list = list.OrderByDescending(item => item.サーバー管理者ID).ToList();
-            //                    break;
-            //                case 9:
-            //                    list = list.OrderByDescending(item => item.サーバー管理者名).ToList();
-            //                    break;
-            //                case 10:
-            //                    list = list.OrderByDescending(item => item.ソフトウェアバージョンID).ToList();
-            //                    break;
-            //                case 11:
-            //                    list = list.OrderByDescending(item => item.ソフトウェアID).ToList();
-            //                    break;
-            //                case 12:
-            //                    list = list.OrderByDescending(item => item.ソフトウェア名).ToList();
-            //                    break;
-            //                case 13:
-            //                    list = list.OrderByDescending(item => item.バージョン).ToList();
-            //                    break;
-            //            }
-            //            dataGridView1.Columns[e.ColumnIndex].HeaderCell.SortGlyphDirection = SortOrder.Descending;
-            //            break;
-            //        }
-            //}
-
-            //bindingSource1.DataSource = list;
         }
     }
 }

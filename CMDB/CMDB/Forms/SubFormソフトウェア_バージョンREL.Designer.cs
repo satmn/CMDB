@@ -119,9 +119,6 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource bindingSource1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn サーバーDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn リソースバージョンDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 用途区分DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ソフトウェアバージョンIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ソフトウェアIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn バージョンDataGridViewTextBoxColumn;

@@ -119,7 +119,6 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource bindingSource1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn サーバー管理者DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn サーバーIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn サーバー名DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn サーバー管理者IDDataGridViewTextBoxColumn;
