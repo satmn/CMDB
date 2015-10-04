@@ -92,25 +92,23 @@ namespace CMDB.Forms
             {
                 DataGridView dgv = (DataGridView)sender;
 
+                BindingSource.EndEdit();
+                DataTable dt = (DataTable)BindingSource.DataSource;
+                DataTable changedTable = dt.GetChanges();
+                dataAdapter.Update(dt);
+                if (changedTable != null && changedTable.Rows != null)
                 {
-                    BindingSource.EndEdit();
-                    DataTable dt = (DataTable)BindingSource.DataSource;
-                    DataTable changedTable = dt.GetChanges();
-                    dataAdapter.Update(dt);
-                    if (changedTable != null && changedTable.Rows != null)
+                    bool add = false;
+                    foreach (System.Data.DataRow row in changedTable.Rows)
                     {
-                        bool add = false;
-                        foreach (System.Data.DataRow row in changedTable.Rows)
+                        if (row.RowState == DataRowState.Added)
                         {
-                            if (row.RowState == DataRowState.Added)
-                            {
-                                add = true;
-                                break;
-                            }
+                            add = true;
+                            break;
                         }
-                        if (add)
-                            SelectFromDB();
                     }
+                    if (add)
+                        SelectFromDB();
                 }
 
                 DataGridView dataGridView = sender as DataGridView;
