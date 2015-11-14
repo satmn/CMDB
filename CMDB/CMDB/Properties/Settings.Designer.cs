@@ -26,10 +26,22 @@ namespace CMDB.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SSD0044\\SQLEXPRESS;Initial Catalog=CMDB;User ID=cmdb;Password=cmdb")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\v11.0;Integrated Security=True;Connect Timeout=15;Encrypt=F" +
+            "alse;TrustServerCertificate=False")]
         public string AAAA {
             get {
                 return ((string)(this["AAAA"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\v11.0;Integrated Security=True;Connect Timeout=15;Encrypt=F" +
+            "alse;TrustServerCertificate=False")]
+        public string CMDB {
+            get {
+                return ((string)(this["CMDB"]));
             }
         }
     }
